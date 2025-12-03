@@ -25,7 +25,7 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 hero-gradient opacity-5" />
-      
+
       <div className="container relative z-10 px-4 py-16 md:py-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Content */}
@@ -36,14 +36,14 @@ const HeroSection = () => {
               </h1>
               <div className="h-1 w-24 accent-gradient rounded-full" />
             </div>
-            
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-              Stanco/a dei match superficiali?
+
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight">
+              Non serve un nuovo modo per connettersi, ma ricordarsi come si fa
             </h2>
-            
+
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              Dove l'AI incontra la Psicologia per farti trovare{" "}
-              <span className="text-primary font-semibold">legami che contano</span>
+              Youniks è l'app phygital delle relazioni umane. Dove Psicologia e IA ti aiutano a scoprire persone che riconoscono la tua unicità per
+              <span className="text-primary font-semibold"> costruire legami reali</span>
             </p>
 
             {/* Email signup form */}
@@ -64,12 +64,12 @@ const HeroSection = () => {
                 className="h-14 text-lg border-2 focus:border-primary"
                 required
               />
-              <Button 
-                type="submit" 
-                size="lg" 
+              <Button
+                type="submit"
+                size="lg"
                 className="w-full h-14 text-lg accent-gradient hover:opacity-90 transition-smooth font-semibold glow-shadow"
               >
-                ISCRIVITI GRATIS - Accesso Anticipato
+                ISCRIVITI GRATIS
               </Button>
             </form>
 
