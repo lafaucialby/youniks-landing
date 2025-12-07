@@ -2,8 +2,8 @@ import HeroSection from "@/components/HeroSection";
 import ProblemSection from "@/components/ProblemSection";
 import MethodSection from "@/components/MethodSection";
 import DifferentiatorsSection from "@/components/DifferentiatorsSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import FinalCTASection from "@/components/FinalCTASection";
+//import TestimonialsSection from "@/components/TestimonialsSection";
+//import FinalCTASection from "@/components/FinalCTASection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -13,8 +13,8 @@ const Index = () => {
       <ProblemSection />
       <MethodSection />
       <DifferentiatorsSection />
-      <TestimonialsSection />
-      <FinalCTASection />
+      {/*<TestimonialsSection />
+      {/*<FinalCTASection />*/}
       <Footer />
     </main>
   );

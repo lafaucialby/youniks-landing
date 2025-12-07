@@ -1,13 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
-import heroImage from "@/assets/hero-connection.jpg";
+import videoBackground from "@/assets/abbraccio.mp4";
+import logo from "@/assets/logo_bl_original.svg";
 
 const HeroSection = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const { toast } = useToast();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.8;
+    }
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,27 +31,41 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 hero-gradient opacity-5" />
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 hero-gradient opacity-80 z-10" />
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src={videoBackground} type="video/mp4" />
+        </video>
+      </div>
 
       <div className="container relative z-10 px-4 py-16 md:py-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Content */}
           <div className="space-y-8 animate-fade-in">
             <div className="inline-block">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-4">
-                Youniks
-              </h1>
+              <img
+                src={logo}
+                alt="Youniks Logo"
+                className="h-12 md:h-16 lg:h-20 mb-4"
+              />
               <div className="h-1 w-24 accent-gradient rounded-full" />
             </div>
 
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
               Non serve un nuovo modo per connettersi, ma ricordarsi come si fa
             </h2>
 
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+            <p className="text-xl md:text-2xl text-zinc-200 leading-relaxed">
               Youniks è l'app phygital delle relazioni umane. Dove Psicologia e IA ti aiutano a scoprire persone che riconoscono la tua unicità per
-              <span className="text-primary font-semibold"> costruire legami reali</span>
+              <span className="text-white font-bold"> costruire legami reali</span>
             </p>
 
             {/* Email signup form */}
@@ -73,24 +95,9 @@ const HeroSection = () => {
               </Button>
             </form>
 
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-zinc-300">
               Unisciti alla lista d'attesa e ricevi contenuti esclusivi
             </p>
-          </div>
-
-          {/* Right: Image */}
-          <div className="relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <div className="relative soft-shadow rounded-3xl overflow-hidden">
-              <img
-                src={heroImage}
-                alt="Connessioni autentiche tra persone attraverso AI e psicologia"
-                className="w-full h-auto object-cover"
-                loading="eager"
-              />
-            </div>
-            {/* Decorative elements */}
-            <div className="absolute -z-10 top-10 right-10 w-72 h-72 hero-gradient rounded-full blur-3xl opacity-20" />
-            <div className="absolute -z-10 bottom-10 left-10 w-60 h-60 accent-gradient rounded-full blur-3xl opacity-15" />
           </div>
         </div>
       </div>

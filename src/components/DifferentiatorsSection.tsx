@@ -3,17 +3,17 @@ import { Shield, HeartPulse, Sparkles } from "lucide-react";
 const pillars = [
   {
     icon: Shield,
-    title: "Massima Sicurezza e Privacy",
-    description: "I tuoi dati sono protetti con gli standard più elevati. Creiamo un ambiente sicuro dove puoi essere te stesso senza preoccupazioni.",
+    title: "Sicurezza e Privacy",
+    description: "I tuoi dati sono protetti riservati e non condivisi. Creiamo un ambiente sicuro dove puoi essere te stesso senza preoccupazioni.",
     color: "text-primary",
     bgColor: "bg-primary/10",
   },
   {
     icon: HeartPulse,
     title: "Benessere Emotivo al Primo Posto",
-    description: "Ogni funzionalità è progettata per supportare il tuo benessere psicologico e aiutarti a superare la solitudine.",
-    color: "text-accent",
-    bgColor: "bg-accent/10",
+    description: "Ogni funzionalità è progettata per supportare il tuo benessere psicologico e aiutarti nel coltivare i tuoi rapporti.",
+    color: "text-primary",
+    bgColor: "bg-primary/10",
   },
   {
     icon: Sparkles,
@@ -53,7 +53,7 @@ const DifferentiatorsSection = () => {
                       <Icon className={`w-10 h-10 ${pillar.color}`} />
                     </div>
                   </div>
-                  
+
                   {/* Content */}
                   <h3 className="text-2xl font-bold text-foreground mb-4">
                     {pillar.title}

@@ -8,101 +8,113 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 42 30% 97%;
-    --foreground: 240 10% 15%;
+    /* #f8f6e7 - Cream Background */
+    --background: 53 42% 94%;
+    /* #41231a - Dark Brown Foreground */
+    --foreground: 14 43% 18%;
 
+    /* #ffffff - Card Background (or keep same as bg for flat look, but lets use white for contrast) */
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 15%;
+    --card-foreground: 14 43% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 15%;
+    --popover-foreground: 14 43% 18%;
 
-    --primary: 262 70% 45%;
-    --primary-foreground: 0 0% 100%;
+    /* #e15749 - Red/Orange Primary */
+    --primary: 5 71% 58%;
+    --primary-foreground: 53 42% 94%;
 
-    --secondary: 190 65% 92%;
-    --secondary-foreground: 240 10% 15%;
+    /* #f9c5b8 - Pink Secondary */
+    --secondary: 12 84% 85%;
+    --secondary-foreground: 14 43% 18%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 240 4% 46%;
+    /* #859fa4 - GreyBlue Muted */
+    --muted: 190 16% 90%;
+    /* Lighter version for backgrounds */
+    --muted-foreground: 190 16% 40%;
+    /* Darker version for text */
 
-    --accent: 15 85% 60%;
-    --accent-foreground: 0 0% 100%;
+    /* #e15749 - Accent (same as primary or maybe the pink?) Let's use Pink as Accent */
+    --accent: 12 84% 85%;
+    --accent-foreground: 14 43% 18%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 262 70% 45%;
+    /* #859fa4 - Border */
+    --border: 190 16% 58%;
+    --input: 190 16% 58%;
+    --ring: 5 71% 58%;
 
     --radius: 1rem;
-    
-    /* Custom tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(262 70% 45%), hsl(280 60% 55%));
-    --accent-gradient: linear-gradient(120deg, hsl(15 85% 60%), hsl(30 90% 65%));
-    --soft-shadow: 0 10px 40px -10px hsl(262 70% 45% / 0.15);
-    --glow-shadow: 0 0 30px hsl(262 70% 45% / 0.3);
+
+    /* palette */
+    --hero-gradient: linear-gradient(135deg, hsl(14 43% 18%), hsl(5 71% 58%));
+    --accent-gradient: linear-gradient(120deg, hsl(5 71% 58%), hsl(12 84% 85%));
+    --blue-gradient: linear-gradient(135deg, hsl(202 99% 31%), hsl(202 80% 50%));
+    --teal-gradient: linear-gradient(135deg, hsl(179 33% 66%), hsl(179 40% 80%));
+    --ocean-gradient: linear-gradient(135deg, hsl(202 99% 31%), hsl(179 33% 66%));
+
+    --soft-shadow: 0 10px 40px -10px hsl(14 43% 18% / 0.1);
+    --glow-shadow: 0 0 30px hsl(5 71% 58% / 0.3);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 53 42% 94%;
+    --sidebar-foreground: 14 43% 18%;
+    --sidebar-primary: 5 71% 58%;
+    --sidebar-primary-foreground: 53 42% 94%;
+    --sidebar-accent: 12 84% 85%;
+    --sidebar-accent-foreground: 14 43% 18%;
+    --sidebar-border: 190 16% 58%;
+    --sidebar-ring: 5 71% 58%;
   }
 
+  /* Dark mode - adapted to be a dark version of the brown/red theme */
   .dark {
-    --background: 240 10% 8%;
-    --foreground: 0 0% 98%;
+    /* Very dark brown/black */
+    --background: 14 40% 10%;
+    /* Cream text */
+    --foreground: 53 42% 90%;
 
-    --card: 240 10% 12%;
-    --card-foreground: 0 0% 98%;
+    --card: 14 30% 12%;
+    --card-foreground: 53 42% 90%;
 
-    --popover: 240 10% 12%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 14 30% 12%;
+    --popover-foreground: 53 42% 90%;
 
-    --primary: 262 70% 55%;
-    --primary-foreground: 0 0% 100%;
+    /* Primary Red - slightly lighter for dark mode visibility */
+    --primary: 5 71% 65%;
+    --primary-foreground: 14 40% 10%;
 
-    --secondary: 240 10% 15%;
-    --secondary-foreground: 0 0% 98%;
+    /* Muted Pink/Brown */
+    --secondary: 14 20% 20%;
+    --secondary-foreground: 53 42% 90%;
 
-    --muted: 240 10% 15%;
-    --muted-foreground: 240 5% 65%;
+    --muted: 14 20% 20%;
+    --muted-foreground: 190 10% 70%;
 
-    --accent: 15 85% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 14 20% 20%;
+    --accent-foreground: 53 42% 90%;
 
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 10% 18%;
-    --input: 240 10% 18%;
-    --ring: 262 70% 55%;
-    
-    --sidebar-background: 240 10% 10%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 262 70% 55%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 10% 15%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 240 10% 18%;
-    --sidebar-ring: 262 70% 55%;
-    
-    --hero-gradient: linear-gradient(135deg, hsl(262 70% 40%), hsl(280 60% 50%));
-    --soft-shadow: 0 10px 40px -10px hsl(262 70% 55% / 0.25);
-    --glow-shadow: 0 0 30px hsl(262 70% 55% / 0.4);
+    --border: 14 30% 25%;
+    --input: 14 30% 25%;
+    --ring: 5 71% 65%;
+
+    --sidebar-background: 14 40% 10%;
+    --sidebar-foreground: 53 42% 90%;
+    --sidebar-primary: 5 71% 65%;
+    --sidebar-primary-foreground: 14 40% 10%;
+    --sidebar-accent: 14 20% 20%;
+    --sidebar-accent-foreground: 53 42% 90%;
+    --sidebar-border: 14 30% 25%;
+    --sidebar-ring: 5 71% 65%;
+
+    --hero-gradient: linear-gradient(135deg, hsl(5 71% 58%), hsl(14 43% 15%));
+    --soft-shadow: 0 10px 40px -10px hsl(0 0% 0% / 0.5);
+    --glow-shadow: 0 0 30px hsl(5 71% 58% / 0.2);
   }
 }
 
@@ -114,8 +126,13 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold;
   }
 }
@@ -124,19 +141,31 @@ All colors MUST be HSL.
   .hero-gradient {
     background: var(--hero-gradient);
   }
-  
+
   .accent-gradient {
     background: var(--accent-gradient);
   }
-  
+
+  .blue-gradient {
+    background: var(--blue-gradient);
+  }
+
+  .teal-gradient {
+    background: var(--teal-gradient);
+  }
+
+  .ocean-gradient {
+    background: var(--ocean-gradient);
+  }
+
   .soft-shadow {
     box-shadow: var(--soft-shadow);
   }
-  
+
   .glow-shadow {
     box-shadow: var(--glow-shadow);
   }
-  
+
   .transition-smooth {
     transition: var(--transition-smooth);
   }

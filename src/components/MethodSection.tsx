@@ -29,7 +29,9 @@ const MethodSection = () => {
       <div className="container px-4">
         <div className="text-center space-y-6 mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
-            Il Metodo Youniks in 4 Fasi
+            Il Metodo
+            <span className="text-primary font-semibold"> Youniks </span>
+            in 4 Fasi
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Un percorso pensato per creare nuovi legami e trasformare le connessioni digitali in relazioni autentiche
@@ -47,7 +49,7 @@ const MethodSection = () => {
               >
                 <div className="bg-card rounded-2xl p-8 h-full soft-shadow hover:glow-shadow transition-smooth border border-border/50">
                   {/* Number badge */}
-                  <div className="absolute -top-4 -left-4 w-12 h-12 hero-gradient rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                  <div className="absolute -top-4 -left-4 w-12 h-12 ocean-gradient rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
                     {index + 1}
                   </div>
 
