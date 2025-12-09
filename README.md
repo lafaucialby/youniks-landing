@@ -39,3 +39,13 @@ This project is built with:
 ## How can I deploy this project?
 
 Simply run `npm run deploy`.
+
+## Supabase env setup
+
+Copy the .env.example file to .env and fill in the values.
+If you don't have a Supabase account, you can create one at https://supabase.com/ and create a new table named `early_users` with the following columns:
+- `id` (primary key, uuid, default uuid_generate_v4())
+- `name` (text)
+- `email` (text)
+- `city` (text)
+- `created_at` (timestamp with time zone, default now())

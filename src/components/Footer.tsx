@@ -39,7 +39,7 @@ const Footer = () => {
             <a href="https://www.instagram.com/youniks_official/" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
               <SocialIcon icon={siInstagram} size={24} />
             </a>
-            <a href="#" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://www.facebook.com/youniks.official" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
               <SocialIcon icon={siFacebook} size={24} />
             </a>
             <a href="https://www.linkedin.com/company/youniks/" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
@@ -48,7 +48,7 @@ const Footer = () => {
           </div>
           <div className="pt-6 border-t border-border">
             <p className="text-sm text-muted-foreground">
-              © {currentYear} Youniks. Tutti i diritti riservati.
+              © {currentYear} Youniks | Tutti i diritti riservati | <a href="https://www.iubenda.com/privacy-policy/61142671" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-black">Privacy Policy</a> | <a href="https://www.iubenda.com/privacy-policy/61142671/cookie-policy" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-black">Cookie Policy</a>
             </p>
           </div>
         </div>
