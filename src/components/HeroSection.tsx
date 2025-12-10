@@ -68,10 +68,27 @@ const HeroSection = () => {
               description: "Questa email è già presente nella nostra lista d'attesa.",
               variant: "destructive",
             });
+
+            // Track failed signup (duplicate)
+            if (window.gtag) {
+              window.gtag('event', 'signup_error', {
+                event_category: 'engagement',
+                event_label: 'Duplicate Email',
+                error_type: 'duplicate'
+              });
+            }
           } else {
             throw error;
           }
         } else {
+          // Track successful signup
+          if (window.gtag) {
+            window.gtag('event', 'signup_success', {
+              event_category: 'engagement',
+              event_label: 'newsletter_signup'
+            });
+          }
+
           toast({
             title: "Benvenuto in Youniks!",
             description: "Ti contatteremo presto per l'accesso anticipato.",
@@ -88,6 +105,15 @@ const HeroSection = () => {
           description: "Si è verificato un errore durante l'iscrizione. Riprova.",
           variant: "destructive",
         });
+
+        // Track failed signup (other errors)
+        if (window.gtag) {
+          window.gtag('event', 'signup_error', {
+            event_category: 'engagement',
+            event_label: error instanceof Error ? error.message : 'Unknown error',
+            error_type: 'generic'
+          });
+        }
       } finally {
         setLoading(false);
       }

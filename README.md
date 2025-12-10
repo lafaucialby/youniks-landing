@@ -48,4 +48,4 @@ If you don't have a Supabase account, you can create one at https://supabase.com
 - `name` (text)
 - `email` (text)
 - `city` (text)
-- `created_at` (timestamp with time zone, default now())
+- `createdAt` (timestamp with time zone, default now())

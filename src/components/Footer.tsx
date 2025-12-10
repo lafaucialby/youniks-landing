@@ -30,19 +30,28 @@ const SocialIcon = ({ icon, className, size = 24 }: SocialIconProps) => (
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const handleSocialClick = (platform: string) => {
+    if (typeof window.gtag !== 'undefined') {
+      window.gtag('event', 'social_click', {
+        event_category: 'social',
+        event_label: platform
+      });
+    }
+  };
+
   return (
     <footer className="bg-foreground/5 border-t border-border py-12">
       <div className="container px-4">
         <div className="max-w-6xl mx-auto text-center space-y-6">
           <h3 className="text-2xl font-bold text-foreground">Youniks</h3>
           <div className="flex justify-center space-x-6">
-            <a href="https://www.instagram.com/youniks_official/" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://www.instagram.com/youniks_official/" target="_blank" onClick={() => handleSocialClick('Instagram')} className="text-muted-foreground hover:text-primary transition-colors">
               <SocialIcon icon={siInstagram} size={24} />
             </a>
-            <a href="https://www.facebook.com/youniks.official" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://www.facebook.com/youniks.official" target="_blank" onClick={() => handleSocialClick('Facebook')} className="text-muted-foreground hover:text-primary transition-colors">
               <SocialIcon icon={siFacebook} size={24} />
             </a>
-            <a href="https://www.linkedin.com/company/youniks/" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://www.linkedin.com/company/youniks/" target="_blank" onClick={() => handleSocialClick('LinkedIn')} className="text-muted-foreground hover:text-primary transition-colors">
               <SocialIcon icon={siLinkedin} size={24} />
             </a>
           </div>
