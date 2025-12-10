@@ -1,4 +1,5 @@
 import { siInstagram, siFacebook } from "simple-icons";
+import { useAnalytics } from "@/context/AnalyticsContext";
 
 const siLinkedin = {
   title: 'LinkedIn',
@@ -29,14 +30,10 @@ const SocialIcon = ({ icon, className, size = 24 }: SocialIconProps) => (
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { trackEvent } = useAnalytics();
 
   const handleSocialClick = (platform: string) => {
-    if (typeof window.gtag !== 'undefined') {
-      window.gtag('event', 'social_click', {
-        event_category: 'social',
-        event_label: platform
-      });
-    }
+    trackEvent('social_click', { platform });
   };
 
   return (

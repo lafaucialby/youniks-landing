@@ -22,10 +22,12 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import provincesData from "@/data/province.json";
-
 import { Checkbox } from "@/components/ui/checkbox";
 
+import { useAnalytics } from "@/context/AnalyticsContext";
+
 const HeroSection = () => {
+  const { trackEvent } = useAnalytics();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [province, setProvince] = useState("");
@@ -63,32 +65,17 @@ const HeroSection = () => {
 
         if (error) {
           if (error.code === '23505') {
+            trackEvent('signup_failure', { reason: 'email_already_registered' });
             toast({
               title: "Email già registrata",
               description: "Questa email è già presente nella nostra lista d'attesa.",
               variant: "destructive",
             });
-
-            // Track failed signup (duplicate)
-            if (window.gtag) {
-              window.gtag('event', 'signup_error', {
-                event_category: 'engagement',
-                event_label: 'Duplicate Email',
-                error_type: 'duplicate'
-              });
-            }
           } else {
             throw error;
           }
         } else {
-          // Track successful signup
-          if (window.gtag) {
-            window.gtag('event', 'signup_success', {
-              event_category: 'engagement',
-              event_label: 'newsletter_signup'
-            });
-          }
-
+          trackEvent('signup_success');
           toast({
             title: "Benvenuto in Youniks!",
             description: "Ti contatteremo presto per l'accesso anticipato.",
@@ -100,20 +87,12 @@ const HeroSection = () => {
         }
       } catch (error) {
         console.error("Error saving to supabase:", error);
+        trackEvent('signup_failure', { reason: (error as any)?.message || 'unknown_error' });
         toast({
           title: "Errore",
           description: "Si è verificato un errore durante l'iscrizione. Riprova.",
           variant: "destructive",
         });
-
-        // Track failed signup (other errors)
-        if (window.gtag) {
-          window.gtag('event', 'signup_error', {
-            event_category: 'engagement',
-            event_label: error instanceof Error ? error.message : 'Unknown error',
-            error_type: 'generic'
-          });
-        }
       } finally {
         setLoading(false);
       }

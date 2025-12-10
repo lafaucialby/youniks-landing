@@ -2,23 +2,25 @@ import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useAnalytics } from "@/context/AnalyticsContext";
 
 export const CookieBanner = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
+    const { acceptCookies, isConsentGiven } = useAnalytics();
 
     useEffect(() => {
-        // Check if consent is stored in localStorage
-        const consent = localStorage.getItem("youniks-cookie-consent");
-        if (!consent) {
-            // Small delay for better UX
-            const timer = setTimeout(() => setIsVisible(true), 1500);
-            return () => clearTimeout(timer);
+        if (!isConsentGiven) {
+            const consent = localStorage.getItem("youniks-cookie-consent");
+            if (!consent) {
+                const timer = setTimeout(() => setIsVisible(true), 1500);
+                return () => clearTimeout(timer);
+            }
         }
-    }, []);
+    }, [isConsentGiven]);
 
     const handleAccept = () => {
-        localStorage.setItem("youniks-cookie-consent", "true");
+        acceptCookies();
         closeBanner();
     };
 
@@ -40,8 +42,7 @@ export const CookieBanner = () => {
                 <div className="flex-1 text-center sm:text-left">
                     <h3 className="text-sm font-semibold mb-1">Cookie & Privacy</h3>
                     <p className="text-xs text-muted-foreground leading-relaxed">
-                        Utilizziamo i cookie per migliorare la tua esperienza su Youniks.
-                        Navigando sul sito accetti l'uso dei cookie.
+                        Utilizziamo i cookie per analizzare il traffico, migliorare l'esperienza utente e ottimizzare le nostre campagne. I dati raccolti sono anonimizzati e ci aiutano a capire come interagisci con Youniks.
                     </p>
                 </div>
                 <div className="flex items-center gap-3 w-full sm:w-auto">
