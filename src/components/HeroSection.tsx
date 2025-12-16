@@ -130,14 +130,16 @@ const HeroSection = () => {
             </div>
 
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
-              Non serve un nuovo modo per connettersi, ma ricordarsi come si fa
+              Stanchi dello swipe, di trovare casi umani e persone a caso?
             </h2>
 
-            <p className="text-xl md:text-2xl text-zinc-200 leading-relaxed">
-              Youniks è l'app phygital delle relazioni umane. Dove Psicologia e IA ti aiutano a scoprire persone che riconoscono la tua unicità per
-              <span className="text-white font-bold"> costruire legami reali</span>
-            </p>
-
+          <p className="text-xl md:text-2xl text-zinc-200 leading-relaxed">
+    Youniks è l'app che ti aiuta a costruire{" "}
+    <span className="text-white font-bold">amicizie vere</span> con chi cerca la
+    tua stessa profondità e unicità.
+    <br className="hidden md:block" /> Il luogo virtuale dove trovi{" "}
+    <span className="text-white font-bold">persone reali</span>.
+            
             {/* Email signup form */}
             <form onSubmit={handleSubmit} className="space-y-4 max-w-md">
               <Input
