@@ -15,7 +15,7 @@ const ProblemSection = () => {
             autenticità contro apparenze, valori profondi contro like vuoti.
           </p>
           
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
             Come? Psicologia e Intelligenza Artificiale lavorano insieme: un algoritmo etico che conosce la scienza dell'amicizia.
             Un ecosistema che facilita la creazione di relazioni che iniziano online, ma si nutrono nel mondo reale;
             uno spazio personale dove ogni utente trova la sua rete sociale di riferimento.
